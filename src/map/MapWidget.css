@@ -1,0 +1,17 @@
+.MapWidget {
+	overflow: hidden;
+	position: relative;
+	touch-action: none;
+	border: 1px solid #000;
+}
+
+.MapWidget-debug-overlay {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.1);
+	outline: 1px solid black;
+	left: 0;
+	top: 0;
+	min-width: 300px;
+	white-space: pre;
+	font-family: monospace;
+}

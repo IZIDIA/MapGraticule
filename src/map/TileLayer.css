@@ -1,0 +1,15 @@
+.TileLayer {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.TileLayer-debug-tile {
+	position: absolute;
+	user-select: none;
+	pointer-events: none;
+	border: 1px solid black;
+}

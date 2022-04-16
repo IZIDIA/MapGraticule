@@ -1,0 +1,9 @@
+.NumberInput {
+	display: block;
+	width: 100px;
+}
+
+.NumberInput-invalid {
+	border-color: red;
+	outline-color: red;
+}

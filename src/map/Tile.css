@@ -1,0 +1,5 @@
+.Tile {
+	position: absolute;
+	user-select: none;
+	pointer-events: none;
+}

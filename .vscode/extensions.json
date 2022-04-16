@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"dbaeumer.vscode-eslint",
+		"EditorConfig.EditorConfig",
+		"fabianlauer.vs-code-xml-format",
+		"hediet.tasks-statusbar",
+		"lacroixdavid1.vscode-format-context-menu",
+		"MikeBovenlander.formate",
+		"richie5um2.vscode-sort-json",
+	]
+}

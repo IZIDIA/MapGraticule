@@ -1,0 +1,9 @@
+.MapWidgetDemo {
+	display: flex;
+	height: 100%;
+}
+
+.MapWidgetDemo>.MapWidget {
+	align-self: stretch;
+	flex-grow: 1;
+}

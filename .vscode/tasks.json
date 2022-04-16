@@ -1,0 +1,14 @@
+{
+	"tasks": [
+		{
+			"group": "build",
+			"presentation": {
+				"clear": true
+			},
+			"problemMatcher": [],
+			"script": "build",
+			"type": "npm"
+		}
+	],
+	"version": "2.0.0"
+}
