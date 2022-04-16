@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Labelled } from '../common/Labelled';
 import { NumberInput } from '../common/NumberInput';
+import { defaultGraticuleState, GraticuleState } from '../layers/GraticuleState';
 import { defaultMapSettings, MapSettings } from './MapSettings';
 import { defaultMapState, MapState } from './MapState';
 import { MapWidget } from './MapWidget';
@@ -11,6 +12,7 @@ export function MapWidgetDemo() {
 	const [maxHeight, setMaxHeight] = useState<number>(1000);
 	const [mapState, setMapState] = useState<MapState>(defaultMapState);
 	const [mapSettings, setMapSettings] = useState<MapSettings>(defaultMapSettings);
+	const [graticulesState, setGraticuleState] = useState<GraticuleState>(defaultGraticuleState);
 	const centerStep = 10 * Math.pow(0.5, mapState.mapZoom);
 	return (
 		<div className="MapWidgetDemo">
@@ -60,6 +62,38 @@ export function MapWidgetDemo() {
 						onChange={value => setMapState({ ...mapState, mapZoom: value })}
 					></NumberInput>
 				</Labelled>
+				<Labelled label="longitude step">
+					<NumberInput
+						min={graticulesState.minStep}
+						max={graticulesState.maxStep}
+						step={1}
+						value={graticulesState.longitudesStep}
+						onChange={value => setGraticuleState({ ...graticulesState, longitudesStep: value })}
+					></NumberInput>
+				</Labelled>
+				<Labelled label="latitude step">
+					<NumberInput
+						min={graticulesState.minStep}
+						max={graticulesState.maxStep}
+						step={1}
+						value={graticulesState.latitudesStep}
+						onChange={value => setGraticuleState({ ...graticulesState, latitudesStep: value })}
+					></NumberInput>
+				</Labelled>
+				<Labelled label="graticule">
+					<input
+						type="checkbox"
+						checked={graticulesState.show}
+						onChange={event => setGraticuleState({ ...graticulesState, show: event.target.checked })}
+					></input>
+				</Labelled>
+				<Labelled label="auto step">
+					<input
+						type="checkbox"
+						checked={graticulesState.autoStep}
+						onChange={event => setGraticuleState({ ...graticulesState, autoStep: event.target.checked })}
+					></input>
+				</Labelled>
 				<Labelled label="debug">
 					<input
 						type="checkbox"
@@ -71,11 +105,13 @@ export function MapWidgetDemo() {
 			<MapWidget
 				mapState={mapState}
 				onMapStateChange={setMapState}
+				onGraticuleStateChange={setGraticuleState}
 				mapSettings={mapSettings}
 				style={{
 					maxWidth,
 					maxHeight,
 				}}
+				graticuleState={graticulesState}
 			></MapWidget>
 		</div>
 	);
